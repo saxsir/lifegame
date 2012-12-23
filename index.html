@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <title>ライフゲームつくってみた</title>
+        <style>
+			.clearfix:after {
+
+				content: ".";
+				display: block;
+				height: 0;
+				font-size: 0;
+				clear: both;
+				visibility: hidden;
+			}
+			.clearfix {
+				display: inline-block;
+			}
+			/* Hides from IE Mac */
+			* html .clearfix {
+				height: 1%;
+			}
+			.clearfix {
+				display: block;
+			}
+
+			canvas#field {
+				border: 1px solid black;
+				float: left;
+				margin: 0 auto;
+			}
+			div#info {
+				float: left;
+				margin: 10px;
+			}
+        </style>
+    </head>
+    <body>
+        <div class="clearfix">
+            <canvas id="field">
+                コンテンツを表示するにはcanvasタグをサポートしたブラウザでご覧ください。
+            </canvas>
+            <div id="info">
+                <p>
+                    個体数：<span id="live_num"></span>
+                </p>
+            </div>
+        </div>
+        <div>
+            <div id="setting">
+                スピード：
+                <input id="speed" type="text" value="100">
+                （1〜10）
+            </div>
+            <div id="controller">
+                <button id="start">
+                    スタート
+                </button>
+                <button id="stop" disabled>
+                    一時停止
+                </button>
+                <button id="rand">
+                    ランダム配置
+                </button>
+                <button id="reset" disabled>
+                    リセット
+                </button>
+                <button id="save" disabled>
+                    localStrageに保存
+                </button>
+            </div>
+            <div>
+                第<span id="generation">0</span>世代
+            </div>
+        </div>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
